@@ -9,11 +9,10 @@ class Solution:
             'D':500,
             'M':1000
             } 
-        count=0    
+        count = 0
         for i in range(len(s)):
-            if i < len(s) - 1 and value[s[i]] < value[s[i + 1]]:
+            if i < len(s)-1 and value[s[i]] < value[s[i+1]]:
                 count -= value[s[i]]
-            else:
-                count += value[s[i]]
-
+            else:    
+                count += value[s[i]]   
         return count
