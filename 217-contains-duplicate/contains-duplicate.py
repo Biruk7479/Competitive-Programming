@@ -3,8 +3,9 @@ class Solution:
         s = set()
 
         for num in nums:
-            if num in s:
-                return True
-            else:
+            if num not in s:
                 s.add(num)
+            else:
+                s.remove(num)
+                return True
         return False                    
