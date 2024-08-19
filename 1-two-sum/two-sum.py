@@ -1,14 +1,9 @@
-
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-         num_to_index = {}
-        
-         for i, num in enumerate(nums):
-            number = target - num
-            
-            if number in num_to_index:
-                return [num_to_index[number], i]
-            
-            num_to_index[num] = i
-        
-         return []
+        h={}
+        for i in range(len(nums)):
+            h[nums[i]]=i
+        for i in range(len(nums)):
+            number=target-nums[i]
+            if number in h and h[number]!=i:
+                return[i,h[number]]  
