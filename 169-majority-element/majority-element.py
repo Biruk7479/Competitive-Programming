@@ -3,6 +3,6 @@ class Solution:
         h=defaultdict(int)
         for i in range(len(nums)):
                 h[nums[i]]+=1
-        for i in range(len(nums)):
-            if h[nums[i]]>len(nums)//2:
-             return nums[i]
+        for num in h:
+             if h[num] > len(nums) // 2:
+                return num
