@@ -3,10 +3,12 @@ class Solution:
        #####two pointers####
        left=0
        right=len(numbers)-1
+       s=0
        while left < right:
-        if numbers[left]+numbers[right]<target:
+        s=numbers[left]+numbers[right]
+        if s<target:
             left+=1
-        elif numbers[left]+numbers[right]>target:
+        elif s>target:
             right-=1
         else:
             return [left+1,right+1]
