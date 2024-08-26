@@ -1,14 +1,12 @@
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
-        d = {} 
-        output = []
-        
-        for i in range(len(numbers)):
-            num = target - numbers[i]
-            if num in d:
-                output.append(d[num]+1)  # Index of the complement
-                output.append(i+1)  # Current index
-                break  # Exit if we found the pair
-            d[numbers[i]] = i  # Store the index of the current number
-        
-        return sorted(output)
+       #####two pointers####
+       left=0
+       right=len(numbers)-1
+       while left < right:
+        if numbers[left]+numbers[right]<target:
+            left+=1
+        elif numbers[left]+numbers[right]>target:
+            right-=1
+        else:
+            return [left+1,right+1]
