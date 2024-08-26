@@ -10,7 +10,8 @@ class Solution:
             else:
                 output.append(nums[j]**2)
                 j-=1
-        return output[::-1]        
+        output.reverse()        
+        return output   
 
             
         
