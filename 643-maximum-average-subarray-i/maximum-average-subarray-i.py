@@ -3,9 +3,8 @@ class Solution:
         cur_sum=0
         n = len(nums)
 
-        for i in range(k):
-            cur_sum+=nums[i]
-            max_av=cur_sum/k
+        cur_sum=sum(nums[:k])
+        max_av=cur_sum/k
         for i in range(k,n):
             cur_sum+=nums[i]
             cur_sum-=nums[i-k]
