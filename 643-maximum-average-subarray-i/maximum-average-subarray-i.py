@@ -1,20 +1,17 @@
 class Solution:
     def findMaxAverage(self, nums: List[int], k: int) -> float:
         cur_sum=0
-        n=len(nums)
-        max_av=0
-
-        for i in range(k):
-            cur_sum+=nums[i]
-            max_av=cur_sum/k
-
-        for i in range(k,n):
-            cur_sum+=nums[i]
-            cur_sum-=nums[i-k]
-            max_av=max(cur_sum/k,max_av)
-        return max_av 
-
-                        
+        i=0
+        max_av=float('-inf')
+        while i+k <= len(nums):
+            if i==0:
+                for j in range(k):
+                    cur_sum=cur_sum+nums[j]
+                max_av=max(max_av, cur_sum/k)
+            else:
+                cur_sum=cur_sum-nums[i-1]+nums[i+k-1]
+                max_av=max(max_av, cur_sum/k)
+            i+=1
+        return max_av
 
 
-        
